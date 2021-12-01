@@ -2,9 +2,9 @@ package be.technifutur.menu.actions;
 
 import java.util.Scanner;
 
-public class Factorielle
+public class Factorielle implements Runnable
 {
-	public void run()
+	@Override public void run()
 	{
 		//variables
 		float input;

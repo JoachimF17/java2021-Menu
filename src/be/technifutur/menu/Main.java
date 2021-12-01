@@ -3,7 +3,6 @@ package be.technifutur.menu;
 import java.util.Scanner;
 import be.technifutur.menu.actions.Helloworld;
 import be.technifutur.menu.actions.Factorielle;
-import be.technifutur.menu.actions.Input;
 
 public class Main
 {
@@ -11,12 +10,12 @@ public class Main
 	{
 		//variables
 		int input;
-		int nbChoix = 2;
+		int nbChoix;
 		//objets
 		Scanner sc = new Scanner(System.in);
 		Helloworld hw = new Helloworld();
 		Factorielle facto = new Factorielle();
-		Input ipt = new Input();
+		Runnable[] tab = {hw, facto};
 		
 		//programme
 		System.out.println("Menu des fonctions");
@@ -24,16 +23,14 @@ public class Main
 		System.out.println("1. Afficher Hello World");
 		System.out.println("2. Calcul factorielle");
 		
-		input = ipt.run(nbChoix);
+		nbChoix = tab.length;
 		
-		switch(input)
+		do //boucle de verification
 		{
-			case 1:
-				hw.run();
-				break;
-			case 2:
-				facto.run();
-				break;
-		}
+			System.out.print("Entrez le nombre correspondant : ");
+			input = Integer.parseInt(sc.nextLine());
+		}while(input<1 || input>nbChoix);
+		
+		tab[input-1].run();
 	}
 }

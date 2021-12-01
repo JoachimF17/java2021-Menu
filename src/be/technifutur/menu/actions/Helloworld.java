@@ -2,9 +2,9 @@ package be.technifutur.menu.actions;
 
 //import java.lang.Runnable;
 
-public class Helloworld
+public class Helloworld implements Runnable
 {
-	public void run()
+	@Override public void run()
 	{
 		System.out.println("Hello world!");
 	}
