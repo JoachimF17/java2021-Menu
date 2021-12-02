@@ -17,19 +17,42 @@ public class MenuFactory
 
         return create; //renvoie la valeur apres affectation
     }
-
+    //cree un objet avec les parametres voulus
     public Item getItemHelloWorld()
     {
-        return createItem("Programme Hello world", new Helloworld()); //cree un objet avec les parametres voulus
+        return createItem("Programme Hello world", new Helloworld());
     }
 
+    //cree un objet avec les parametres voulus
     public Item getItemFactorielle()
     {
-        return createItem("Programme Factorielle", new Factorielle()); //cree un objet avec les parametres voulus
+        return createItem("Programme Factorielle", new Factorielle());
     }
 
+    //cree un objet avec les parametres voulus
     public Item getItemMoyenne()
     {
         return createItem("Programme Moyenne", new Moyenne());
+    }
+
+    public MenuController getMenu()
+    {
+        MenuController controller = new MenuController();
+        MenuModel model = new MenuModel();
+        MenuVue vue = new MenuVue();
+
+        initMenu(model);
+
+        controller.setModel(model);
+        controller.setVue(vue);
+
+        return controller;
+    }
+
+    private void initMenu(MenuModel menu)
+    {
+        menu.addItem(getItemHelloWorld());
+        menu.addItem(getItemFactorielle());
+        menu.addItem(getItemMoyenne());
     }
 }
