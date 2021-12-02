@@ -13,16 +13,11 @@ public class Main
 		//objets
 		Scanner sc = new Scanner(System.in);
 		MenuFactory factory = new MenuFactory();
-		Item[] tab = new Item[3];
+		Item[] tab = {factory.getItemHelloWorld(), factory.getItemFactorielle(), factory.getItemMoyenne()};
 		
 		//programme
 		System.out.println("Menu des programmes");
 		System.out.println("-------------------");
-
-		//on passe les getItem() dans le tableau
-		tab[0] = factory.getItemHelloWorld();
-		tab[1] = factory.getItemFactorielle();
-		tab[2] = factory.getItemMoyenne();
 
 		//pour limiter les boucles
 		nbChoix = tab.length;
