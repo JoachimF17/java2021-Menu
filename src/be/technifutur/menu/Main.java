@@ -12,16 +12,17 @@ public class Main
 		int i;
 		//objets
 		Scanner sc = new Scanner(System.in);
-		Item[] tab = new Item[2];
-		MenuFactory mf = new MenuFactory();
+		MenuFactory factory = new MenuFactory();
+		Item[] tab = new Item[3];
 		
 		//programme
-		System.out.println("Menu des fonctions");
-		System.out.println("------------------");
+		System.out.println("Menu des programmes");
+		System.out.println("-------------------");
 
 		//on passe les getItem() dans le tableau
-		tab[0] = mf.getItemHelloWorld();
-		tab[1] = mf.getItemFactorielle();
+		tab[0] = factory.getItemHelloWorld();
+		tab[1] = factory.getItemFactorielle();
+		tab[2] = factory.getItemMoyenne();
 
 		//pour limiter les boucles
 		nbChoix = tab.length;
@@ -34,7 +35,7 @@ public class Main
 		{
 			System.out.print("Entrez le nombre correspondant : ");
 			input = Integer.parseInt(sc.nextLine());
-		}while(input<1 || input>nbChoix);
+		}while(input < 1 || input > nbChoix);
 
 		//une fois l'indice selectionne on execute le code voulu (i-1 car on affiche i+1 dans le menu)
 		tab[input-1].getAction().run();

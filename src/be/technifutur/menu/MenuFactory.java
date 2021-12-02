@@ -3,6 +3,7 @@ package be.technifutur.menu;
 import be.technifutur.menu.Item;
 import be.technifutur.menu.actions.Factorielle;
 import be.technifutur.menu.actions.Helloworld;
+import be.technifutur.menu.actions.Moyenne;
 
 public class MenuFactory
 {
@@ -19,11 +20,16 @@ public class MenuFactory
 
     public Item getItemHelloWorld()
     {
-        return createItem("Hello world", new Helloworld()); //cree un objet avec les parametres voulus
+        return createItem("Programme Hello world", new Helloworld()); //cree un objet avec les parametres voulus
     }
 
     public Item getItemFactorielle()
     {
-        return createItem("Factorielle", new Factorielle()); //cree un objet avec les parametres voulus
+        return createItem("Programme Factorielle", new Factorielle()); //cree un objet avec les parametres voulus
+    }
+
+    public Item getItemMoyenne()
+    {
+        return createItem("Programme Moyenne", new Moyenne());
     }
 }

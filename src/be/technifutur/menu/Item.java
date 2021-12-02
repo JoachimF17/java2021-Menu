@@ -7,26 +7,28 @@ public class Item
     private Runnable action;
 
     //getters
+    // renvoie le String 'name' de l'instance
     public String getName()
     {
-        return this.name; //renvoie le String 'name' de l'instance
+        return this.name;
     }
-
+    //renvoie le Runnable 'action' de l'instance
     public Runnable getAction()
     {
-        return this.action; //renvoie le Runnable 'action' de l'instance
+        return this.action;
     }
     //fin getters
 
     //setters
+    // affecte le 'name' en parametre au 'name' de l'instance
     public void setName(String name)
     {
-        this.name = name; //affecte le 'name' en parametre au 'name' de l'instance
+        this.name = name;
     }
-
+    //affecte le 'action' en parametre au 'action' de l'instance
     public void setAction(Runnable action)
     {
-        this.action = action; //affecte le 'action' en parametre au 'action' de l'instance
+        this.action = action;
     }
     //fin setters
 }
