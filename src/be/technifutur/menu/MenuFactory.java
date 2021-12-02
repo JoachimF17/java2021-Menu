@@ -10,6 +10,7 @@ public class MenuFactory
     //template de creation d'item
     private Item createItem(String name, Runnable action)
     {
+        //objets
         Item create = new Item();
 
         create.setAction(action); //passe le parametre 'action' de createItem() en param de setAction()
@@ -17,6 +18,15 @@ public class MenuFactory
 
         return create; //renvoie la valeur apres affectation
     }
+
+    //template de creation de l'itemList qu'on appelle lors de l'init du MenuController
+    private void initMenu(MenuModel menu)
+    {
+        menu.addItem(getItemHelloWorld());
+        menu.addItem(getItemFactorielle());
+        menu.addItem(getItemMoyenne());
+    }
+
     //cree un objet avec les parametres voulus
     public Item getItemHelloWorld()
     {
@@ -37,22 +47,18 @@ public class MenuFactory
 
     public MenuController getMenu()
     {
+        //declaration des objets
         MenuController controller = new MenuController();
         MenuModel model = new MenuModel();
         MenuVue vue = new MenuVue();
 
-        initMenu(model);
+        initMenu(model); //on ajoute les items depuis la fonction initMenu
 
+        //on passe le MenuModel et MenuVue en attributs du MenuController
         controller.setModel(model);
         controller.setVue(vue);
 
-        return controller;
+        return controller; //on renvoie le controller tel quel
     }
 
-    private void initMenu(MenuModel menu)
-    {
-        menu.addItem(getItemHelloWorld());
-        menu.addItem(getItemFactorielle());
-        menu.addItem(getItemMoyenne());
-    }
 }

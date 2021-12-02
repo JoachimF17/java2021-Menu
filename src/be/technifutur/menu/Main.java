@@ -13,9 +13,9 @@ public class Main
 		MenuController control = factory.getMenu();
 		
 		//programme
-		System.out.println("Menu des programmes");
-		System.out.println("-------------------");
-
-		control.getAction().run();
+		if(control.getAction() != null) //on lance le run() que si on n'a pas recu 'null'
+			control.getAction().run();
+		else
+			System.out.println("Input invalide");
 	}
 }

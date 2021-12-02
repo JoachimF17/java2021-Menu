@@ -19,20 +19,21 @@ public class MenuController
 
     public Runnable getAction()
     {
-        Runnable temp;
-        String tempString;
+        //variables
         int tempInt;
-        boolean trouve = false;
+        //objets
+        String tempString;
 
+        //on recupere l'input de l'utilisateur
         tempString = vue.saisirMenu(this.model);
 
+        //on passe de string a int pour passer dans les indices du listItem
         tempInt = Integer.parseInt(tempString) - 1; //-1 car affichage a partir de 1 et pas 0
 
-        temp = this.model.getItem(tempInt).getAction();
-
-        if(temp != null)
-            return temp;
-        else
+        //si l'utilisateur rentre un input invalide, la fonction getItem() renvoie 'null' par protecion
+        if(this.model.getItem(tempInt) != null) //si l'input renvoie un item non 'null', on renvoie son runnable
+            return this.model.getItem(tempInt).getAction();
+        else //sinon on renvoie null par protection
             return null;
     }
 }

@@ -8,15 +8,15 @@ public class MenuModel
 
     public void addItem(Item item)
     {
-        itemList.add(item);
+        itemList.add(item); //ajoute l'item passe en params
     }
 
     public Item getItem(int i)
     {
-        if(itemList.get(i) == null)
-            return null;
+        if(i >= getSize() || i < 0)
+            return null; //retourne null si l'indice ne renvoie pas une valeur comprise dans les limites de la liste
         else
-            return itemList.get(i);
+            return itemList.get(i); //sinon renvoie l'item
     }
 
     public int getSize()
