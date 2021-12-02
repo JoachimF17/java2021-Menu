@@ -21,14 +21,9 @@ public class MenuController
     {
         //variables
         int tempInt;
-        //objets
-        String tempString;
 
-        //on recupere l'input de l'utilisateur
-        tempString = vue.saisirMenu(this.model);
-
-        //on passe de string a int pour passer dans les indices du listItem
-        tempInt = Integer.parseInt(tempString) - 1; //-1 car affichage a partir de 1 et pas 0
+        //on recupere l'input et on passe de string a int pour passer dans les indices du listItem
+        tempInt = Integer.parseInt(vue.saisirMenu(this.model)) - 1; //-1 car affichage a partir de 1 et pas 0
 
         //si l'utilisateur rentre un input invalide, la fonction getItem() renvoie 'null' par protecion
         if(this.model.getItem(tempInt) != null) //si l'input renvoie un item non 'null', on renvoie son runnable

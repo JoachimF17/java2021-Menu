@@ -45,6 +45,7 @@ public class MenuFactory
         return createItem("Programme Moyenne", new Moyenne());
     }
 
+    //creation d'un MenuController sur base des MenuVue et MenuModels
     public MenuController getMenu()
     {
         //declaration des objets

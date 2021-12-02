@@ -11,10 +11,13 @@ public class Main
 		//objets
 		MenuFactory factory = new MenuFactory();
 		MenuController control = factory.getMenu();
+		Runnable action;
 		
 		//programme
-		if(control.getAction() != null) //on lance le run() que si on n'a pas recu 'null'
-			control.getAction().run();
+		action = control.getAction(); //on affecte le runnable
+
+		if(action != null) //on lance le run() que si on n'a pas recu 'null'
+			action.run();
 		else
 			System.out.println("Input invalide");
 	}

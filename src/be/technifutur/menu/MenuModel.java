@@ -19,7 +19,7 @@ public class MenuModel
             return itemList.get(i); //sinon renvoie l'item
     }
 
-    public int getSize()
+    public int getSize() //on revoie la taille de l'itemList
     {
         return itemList.size();
     }
