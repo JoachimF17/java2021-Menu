@@ -25,7 +25,7 @@ public class MenuController
         Item item;
 
         //on recupere l'input et on passe de string a int pour passer dans les indices du listItem
-        tempInt = Integer.parseInt(vue.saisirMenu(this.model)) - 1; //-1 car affichage a partir de 1 et pas 0
+        tempInt = Integer.parseInt(this.vue.saisirMenu(this.model)) - 1; //-1 car affichage a partir de 1 et pas 0
 
         item = this.model.getItem(tempInt);
 

@@ -23,6 +23,6 @@ public class MenuVue
         //on demande l'input a l'utilisateur
         System.out.print("Entrez le nombre correspondant : ");
         //on renvoie l'input, la verif se fera dans le controller et pas dans la vue
-        return input.nextLine();
+        return this.input.nextLine();
     }
 }

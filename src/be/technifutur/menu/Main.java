@@ -2,7 +2,7 @@ package be.technifutur.menu;
 
 public class Main
 {
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 		//variables
 		int input;
@@ -18,7 +18,5 @@ public class Main
 
 		if(action != null) //on lance le run() que si on n'a pas recu 'null'
 			action.run();
-		else
-			System.out.println("Input invalide");
 	}
 }

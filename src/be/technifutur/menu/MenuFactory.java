@@ -24,6 +24,8 @@ public class MenuFactory
         menu.addItem(getItemHelloWorld());
         menu.addItem(getItemFactorielle());
         menu.addItem(getItemMoyenne());
+
+        menu.addItem(getItemQuitter());
     }
 
     //cree un objet avec les parametres voulus
@@ -44,19 +46,24 @@ public class MenuFactory
         return createItem("Programme Moyenne", new Moyenne());
     }
 
-    //creation d'un MenuController sur base des MenuVue et MenuModels
+    //action quitter
+    public Item getItemQuitter()
+    {
+        return createItem("Quitter", null);
+    }
+
+    //creation d'un MenuController sur base des MenuVue et MenuModel
     public MenuController getMenu()
     {
         //declaration des objets
         MenuController controller = new MenuController();
         MenuModel model = new MenuModel();
-        MenuVue vue = new MenuVue();
 
         initMenu(model); //on ajoute les items depuis la fonction initMenu
 
         //on passe le MenuModel et MenuVue en attributs du MenuController
         controller.setModel(model);
-        controller.setVue(vue);
+        controller.setVue(new MenuVue());
 
         return controller; //on renvoie le controller tel quel
     }
