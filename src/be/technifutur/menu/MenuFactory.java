@@ -1,6 +1,5 @@
 package be.technifutur.menu;
 
-import be.technifutur.menu.Item;
 import be.technifutur.menu.actions.Factorielle;
 import be.technifutur.menu.actions.Helloworld;
 import be.technifutur.menu.actions.Moyenne;
