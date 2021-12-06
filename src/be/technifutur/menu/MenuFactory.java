@@ -21,11 +21,11 @@ public class MenuFactory
     //template de creation de l'itemList qu'on appelle lors de l'init du MenuController
     private void initMenu(MenuModel menu)
     {
-        menu.addItem(getItemHelloWorld());
-        menu.addItem(getItemFactorielle());
-        menu.addItem(getItemMoyenne());
+        menu.addNode(getItemHelloWorld());
+        menu.addNode(getItemFactorielle());
+        menu.addNode(getItemMoyenne());
 
-        menu.addItem(getItemQuitter());
+        menu.addNode(getItemQuitter());
     }
 
     //cree un objet avec les parametres voulus
@@ -57,7 +57,7 @@ public class MenuFactory
     {
         //declaration des objets
         MenuController controller = new MenuController();
-        MenuModel model = new MenuModel();
+        MenuModel model = new MenuModel("Menu principal");
 
         initMenu(model); //on ajoute les items depuis la fonction initMenu
 

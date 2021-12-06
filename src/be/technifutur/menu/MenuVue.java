@@ -18,7 +18,7 @@ public class MenuVue
 
         //boucle qui renvoie le name de chaque item
         for(i = 0; i < size; i++)
-            System.out.println((i+1)+". "+menu.getItem(i).getName());
+            System.out.println((i+1)+". "+menu.getNode(i).getName());
 
         //on demande l'input a l'utilisateur
         System.out.print("Entrez le nombre correspondant : ");

@@ -1,6 +1,6 @@
 package be.technifutur.menu;
 
-public class Item
+public class Item implements MenuNode
 {
     //attributs
     private String name;
@@ -8,12 +8,12 @@ public class Item
 
     //getters
     // renvoie le String 'name' de l'instance
-    public String getName()
+    @Override public String getName()
     {
         return this.name;
     }
     //renvoie le Runnable 'action' de l'instance
-    public Runnable getAction()
+    @Override public Runnable getAction()
     {
         return this.action;
     }

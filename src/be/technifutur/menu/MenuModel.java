@@ -4,24 +4,36 @@ import java.util.ArrayList;
 
 public class MenuModel
 {
-    private ArrayList<Item> itemList = new ArrayList<>();
+    private ArrayList<MenuNode> menuNodeList = new ArrayList<>();
+    private String name;
 
-    public void addItem(Item item)
+    //constructeur
+    MenuModel(String name)
     {
-        if(item != null)
-            this.itemList.add(item); //ajoute l'item passe en params
+        this.name = name;
     }
 
-    public Item getItem(int i)
+    public void addNode(MenuNode menuNode)
+    {
+        if(menuNode != null)
+            this.menuNodeList.add(menuNode); //ajoute le node passe en params
+    }
+
+    public MenuNode getNode(int i)
     {
         if(i >= getSize() || i < 0)
             return null; //retourne null si l'indice ne renvoie pas une valeur comprise dans les limites de la liste
         else
-            return this.itemList.get(i); //sinon renvoie l'item
+            return this.menuNodeList.get(i); //sinon renvoie le node
     }
 
-    public int getSize() //on revoie la taille de l'itemList
+    public int getSize() //on revoie la taille de la liste
     {
-        return this.itemList.size();
+        return this.menuNodeList.size();
+    }
+
+    public String getName()
+    {
+        return this.name;
     }
 }
