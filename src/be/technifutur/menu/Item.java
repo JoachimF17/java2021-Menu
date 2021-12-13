@@ -6,6 +6,7 @@ public class Item implements MenuNode
     private String name;
     private Runnable action;
 
+    //methodes
     //getters
     // renvoie le String 'name' de l'instance
     @Override public String getName()

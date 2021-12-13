@@ -4,9 +4,11 @@ import java.util.ArrayList;
 
 public class MenuModel
 {
+    //attributs
     private ArrayList<MenuNode> menuNodeList = new ArrayList<>();
     private String name;
 
+    //methodes
     //constructeur
     MenuModel(String name)
     {

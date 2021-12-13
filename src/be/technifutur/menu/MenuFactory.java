@@ -6,6 +6,7 @@ import be.technifutur.menu.actions.Moyenne;
 
 public class MenuFactory
 {
+    //methodes
     //template de creation d'item
     private Item createItem(String name, Runnable action)
     {
@@ -26,6 +27,18 @@ public class MenuFactory
         menu.addNode(getItemMoyenne());
 
         menu.addNode(getItemQuitter());
+    }
+
+    private MenuController createMenu(MenuModel model)
+    {
+        //declaration des objets
+        MenuController menu = new MenuController();
+
+        //on passe le MenuModel et MenuVue en attributs du MenuController
+        menu.setModel(model);
+        menu.setVue(new MenuVue());
+
+        return menu; //on renvoie le controller tel quel
     }
 
     //cree un objet avec les parametres voulus
@@ -52,20 +65,35 @@ public class MenuFactory
         return createItem("Quitter", null);
     }
 
+    //menus
+    private MenuModel getMenuPrincipal()
+    {
+        MenuModel model = new MenuModel("Menu principal");
+
+        model.addNode(getItemHelloWorld());
+        model.addNode(createMenu(getMenuExercices()));
+
+        model.addNode(getItemQuitter());
+
+        return model;
+    }
+
+    private MenuModel getMenuExercices()
+    {
+        MenuModel model = new MenuModel("Exercices");
+
+        model.addNode(getItemFactorielle());
+        model.addNode(getItemMoyenne());
+
+        model.addNode(getItemQuitter());
+
+        return model;
+    }
+
     //creation d'un MenuController sur base des MenuVue et MenuModel
     public MenuController getMenu()
     {
-        //declaration des objets
-        MenuController controller = new MenuController();
-        MenuModel model = new MenuModel("Menu principal");
-
-        initMenu(model); //on ajoute les items depuis la fonction initMenu
-
-        //on passe le MenuModel et MenuVue en attributs du MenuController
-        controller.setModel(model);
-        controller.setVue(new MenuVue());
-
-        return controller; //on renvoie le controller tel quel
+        return createMenu(getMenuPrincipal()); //on renvoie le controller tel quel
     }
 
 }
