@@ -18,14 +18,17 @@ public class MenuVue
     {
         //variables
         int i;
+        //objets
+        String afficheMenu = "-";
 
         //affichage
         System.out.println(menu.getName());
 
-        for(i = 0;i<menu.getName().length();i++)
-            System.out.print("-");
+        /*for(i = 0;i<menu.getName().length();i++)
+            System.out.print("-");*/
 
-        System.out.println("");
+        afficheMenu = afficheMenu.repeat(menu.getName().length());
+        System.out.println(afficheMenu);
 
         //boucle qui renvoie le name de chaque item
         for(i = 0; i < menu.getSize(); i++)
