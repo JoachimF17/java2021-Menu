@@ -23,14 +23,9 @@ public class MenuVue
 
         //affichage
         System.out.println(menu.getName());
+        System.out.println(afficheMenu.repeat(menu.getName().length()));
 
-        /*for(i = 0;i<menu.getName().length();i++)
-            System.out.print("-");*/
-
-        afficheMenu = afficheMenu.repeat(menu.getName().length());
-        System.out.println(afficheMenu);
-
-        //boucle qui renvoie le name de chaque item
+        //boucle qui renvoie le name de chaque node
         for(i = 0; i < menu.getSize(); i++)
             System.out.println((i+1)+". "+menu.getNode(i).getName());
 
